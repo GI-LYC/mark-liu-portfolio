@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目详情 | 刘奕辰 Mark</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="project">
+    <div data-site-header></div>
+    <main class="project-main">
+      <section class="project-intro">
+        <div class="project-title-block" data-reveal>
+          <p class="eyebrow blue" data-project-brand></p>
+          <h1 data-project-title></h1>
+          <p class="project-type" data-project-type></p>
+        </div>
+        <figure class="project-hero" data-reveal>
+          <img data-project-cover src="" alt="">
+        </figure>
+        <div class="project-brief" data-reveal>
+          <div class="brief-summary">
+            <p class="eyebrow">PROJECT OVERVIEW</p>
+            <p data-project-summary></p>
+          </div>
+          <dl>
+            <div>
+              <dt>角色</dt>
+              <dd data-project-role></dd>
+            </div>
+            <div>
+              <dt>服务范围</dt>
+              <dd><ul data-project-services></ul></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <section class="project-gallery" data-project-media data-reveal aria-label="项目视觉展示"></section>
+      <a class="next-project" data-next-project href="" data-reveal>
+        <p class="eyebrow">NEXT PROJECT</p>
+        <strong></strong>
+        <span></span>
+        <i>↗</i>
+      </a>
+    </main>
+
+    <dialog class="lightbox" data-lightbox>
+      <button type="button" aria-label="关闭大图">关闭 ×</button>
+      <img src="" alt="">
+      <p></p>
+    </dialog>
+    <div data-site-footer></div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

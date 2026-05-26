@@ -1,0 +1,6 @@
+.deploy-tools/
+node_modules/
+*.docx
+
+# 原始素材体积大且含 >100MB 文件，GitHub 无法直接托管；部署使用 dist/
+作品集总结/
