@@ -36,7 +36,7 @@ const portfolioData = {
         { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/AUDI原力节.png"), alt: "AUDI-E 原力节视觉海报" },
         {
           type: "video",
-          src: asset("作品集总结/AUDI-E作品/0422奥迪世界日-1.0.m4v"),
+          src: asset("作品集总结/AUDI-E作品/奥迪世界日.mp4"),
           poster: asset("作品集总结/AUDI-E作品/地球日小红书竖版&抖音封面1.jpg"),
           alt: "AUDI-E 地球日 TVC 视频"
         }
@@ -68,13 +68,13 @@ const portfolioData = {
         { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/小红书竖版&抖音封面1.png"), alt: "AUDI-E 社媒竖版封面视觉" },
         {
           type: "video",
-          src: asset("作品集总结/AUDI-E作品/分享后视镜里的春天_13.m4v"),
+          src: asset("作品集总结/AUDI-E作品/后视镜里的春天.mp4"),
           poster: asset("作品集总结/AUDI-E作品/后视镜里面的春天小红书竖版&抖音封面1.jpg"),
           alt: "后视镜里的春天动态视觉"
         },
         {
           type: "video",
-          src: asset("作品集总结/AUDI-E作品/0402奥迪出行-12.m4v"),
+          src: asset("作品集总结/AUDI-E作品/清明出行.mp4"),
           poster: asset("作品集总结/AUDI-E作品/小红书竖版&抖音封面1.jpg"),
           alt: "AUDI-E 出行短片"
         }

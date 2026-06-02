@@ -70,6 +70,12 @@ const portfolioData = {
           "orientation": "portrait",
           "src": "assets/audi-force-festival.webp",
           "alt": "AUDI-E 原力节视觉海报"
+        },
+        {
+          "type": "video",
+          "src": "assets/audi-earth-day.mp4",
+          "poster": "assets/audi-earth-poster.webp",
+          "alt": "AUDI-E 地球日 TVC 视频"
         }
       ]
     },
@@ -155,6 +161,18 @@ const portfolioData = {
           "orientation": "portrait",
           "src": "assets/audi-xhs-cover.webp",
           "alt": "AUDI-E 社媒竖版封面视觉"
+        },
+        {
+          "type": "video",
+          "src": "assets/audi-spring.mp4",
+          "poster": "assets/audi-spring-poster.webp",
+          "alt": "后视镜里的春天动态视觉"
+        },
+        {
+          "type": "video",
+          "src": "assets/audi-travel.mp4",
+          "poster": "assets/audi-travel-poster.webp",
+          "alt": "AUDI-E 出行短片"
         }
       ]
     },

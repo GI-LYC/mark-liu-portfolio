@@ -49,15 +49,18 @@ const images = [
 ];
 
 const videoSources = [
-  ["作品集总结/AUDI-E作品/0422奥迪世界日-1.0.m4v", "audi-earth-day.mp4"],
-  ["作品集总结/AUDI-E作品/分享后视镜里的春天_13.m4v", "audi-spring.mp4"],
-  ["作品集总结/AUDI-E作品/0402奥迪出行-12.m4v", "audi-travel.mp4"],
+  ["作品集总结/AUDI-E作品/奥迪世界日.mp4", "audi-earth-day.mp4"],
+  ["作品集总结/AUDI-E作品/后视镜里的春天.mp4", "audi-spring.mp4"],
+  ["作品集总结/AUDI-E作品/清明出行.mp4", "audi-travel.mp4"],
   ["作品集总结/吉利作品/变装视频.mp4", "geely-transform.mp4"],
   ["作品集总结/吉利作品/雪地变装视频.mp4", "geely-snow.mp4"],
   ["作品集总结/吉利作品/轮播.mp4", "geely-carousel.mp4"],
   ["作品集总结/吉利作品/吉利中国星&蓝猫官宣视频(3).m4v", "geely-china-star-blue-cat.mp4"]
 ];
 const directPublishVideos = new Map([
+  ["作品集总结/AUDI-E作品/奥迪世界日.mp4", "audi-earth-day.mp4"],
+  ["作品集总结/AUDI-E作品/后视镜里的春天.mp4", "audi-spring.mp4"],
+  ["作品集总结/AUDI-E作品/清明出行.mp4", "audi-travel.mp4"],
   ["作品集总结/吉利作品/变装视频.mp4", "geely-transform.mp4"],
   ["作品集总结/吉利作品/雪地变装视频.mp4", "geely-snow.mp4"],
   ["作品集总结/吉利作品/吉利中国星&蓝猫官宣视频(3).m4v", "geely-china-star-blue-cat.mp4"]
