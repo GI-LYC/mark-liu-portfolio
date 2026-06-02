@@ -1,5 +1,5 @@
 import { copyFile, mkdir, readFile, rm, stat, unlink, writeFile } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { spawn } from "node:child_process";
 import { runInNewContext } from "node:vm";
 
@@ -13,20 +13,28 @@ const deployPython = process.env.DEPLOY_PYTHON || "python";
 
 const images = [
   ["个人照片.png", "portrait.webp", 1400],
+  ["作品集总结/AUDI-E作品/15.png", "audi-15-hero.webp", 1800],
   ["作品集总结/AUDI-E作品/地球日美图 (1).jpg", "audi-earth-01.webp", 1800],
   ["作品集总结/AUDI-E作品/地球日美图 (2).jpg", "audi-earth-02.webp", 1500],
   ["作品集总结/AUDI-E作品/地球日美图 (3).jpg", "audi-earth-03.webp", 1500],
   ["作品集总结/AUDI-E作品/地球日美图 (4).jpg", "audi-earth-04.webp", 1500],
   ["作品集总结/AUDI-E作品/地球日美图 (5).jpg", "audi-earth-05.webp", 1800],
   ["作品集总结/AUDI-E作品/地球日小红书竖版&抖音封面1.jpg", "audi-earth-poster.webp", 1200],
-  ["作品集总结/AUDI-E作品/微博封面竖版1.jpg", "audi-earth-wide.webp", 1800],
   ["作品集总结/AUDI-E作品/谷雨海报.png", "audi-season-rain.webp", 1400],
+  ["作品集总结/AUDI-E作品/1.png", "audi-series-01.webp", 1400],
+  ["作品集总结/AUDI-E作品/2.png", "audi-series-02.webp", 1600],
+  ["作品集总结/AUDI-E作品/3.png", "audi-series-03.webp", 1600],
+  ["作品集总结/AUDI-E作品/4.png", "audi-series-04.webp", 1400],
+  ["作品集总结/AUDI-E作品/12.png", "audi-series-12.webp", 1400],
+  ["作品集总结/AUDI-E作品/13.png", "audi-series-13.webp", 1400],
   ["作品集总结/AUDI-E作品/立夏3-4.png", "audi-season-summer.webp", 1400],
   ["作品集总结/AUDI-E作品/大雪-1080x1440.png", "audi-season-snow.webp", 1400],
   ["作品集总结/AUDI-E作品/1080x1440.png", "audi-season-alt.webp", 1400],
-  ["作品集总结/AUDI-E作品/B站&小红书横版封面1.jpg", "audi-season-wide.webp", 1800],
+  ["作品集总结/AUDI-E作品/画板 3.png", "audi-season-wide.webp", 1400],
+  ["作品集总结/AUDI-E作品/AUDI原力节.png", "audi-force-festival.webp", 1400],
   ["作品集总结/AUDI-E作品/后视镜里面的春天小红书竖版&抖音封面1.jpg", "audi-spring-poster.webp", 1200],
-  ["作品集总结/AUDI-E作品/视频号封面1.jpg", "audi-travel-poster.webp", 1200],
+  ["作品集总结/AUDI-E作品/小红书竖版&抖音封面1.jpg", "audi-travel-poster.webp", 1200],
+  ["作品集总结/AUDI-E作品/小红书竖版&抖音封面1.png", "audi-xhs-cover.webp", 1200],
   ["作品集总结/吉利作品/变装视频封面.jpg", "geely-transform-cover.webp", 1200],
   ["作品集总结/吉利作品/ai视频封面.png", "geely-transform-wide.webp", 1800],
   ["作品集总结/吉利作品/变装1.png", "geely-transform-01.webp", 900],
@@ -46,11 +54,13 @@ const videoSources = [
   ["作品集总结/AUDI-E作品/0402奥迪出行-12.m4v", "audi-travel.mp4"],
   ["作品集总结/吉利作品/变装视频.mp4", "geely-transform.mp4"],
   ["作品集总结/吉利作品/雪地变装视频.mp4", "geely-snow.mp4"],
-  ["作品集总结/吉利作品/轮播.mp4", "geely-carousel.mp4"]
+  ["作品集总结/吉利作品/轮播.mp4", "geely-carousel.mp4"],
+  ["作品集总结/吉利作品/吉利中国星&蓝猫官宣视频(3).m4v", "geely-china-star-blue-cat.mp4"]
 ];
 const directPublishVideos = new Map([
   ["作品集总结/吉利作品/变装视频.mp4", "geely-transform.mp4"],
-  ["作品集总结/吉利作品/雪地变装视频.mp4", "geely-snow.mp4"]
+  ["作品集总结/吉利作品/雪地变装视频.mp4", "geely-snow.mp4"],
+  ["作品集总结/吉利作品/吉利中国星&蓝猫官宣视频(3).m4v", "geely-china-star-blue-cat.mp4"]
 ]);
 
 function run(command, args) {
@@ -85,7 +95,7 @@ async function buildVideos() {
     for (const [source, output] of directPublishVideos) {
       await copyFile(join(root, source), join(assets, output));
     }
-    console.log("FFmpeg unavailable: publishing the two web-sized GEELY videos; oversized source films remain local.");
+    console.log("FFmpeg unavailable: publishing direct video files; oversized AUDI-E source films remain local.");
     return directPublishVideos;
   }
   for (const [source, output] of videoSources) {
@@ -124,6 +134,7 @@ async function buildData(publishedVideos) {
     return outputs.get(decodeURIComponent(url));
   }
 
+  data.heroCover = publishedPath(data.heroCover, imageOutput);
   data.profile.portrait = publishedPath(data.profile.portrait, imageOutput);
   data.projects.forEach((project) => {
     project.cover = publishedPath(project.cover, imageOutput);
@@ -144,6 +155,10 @@ async function buildData(publishedVideos) {
     `const portfolioData = ${JSON.stringify(data, null, 2)};\n\nwindow.PORTFOLIO_DATA = portfolioData;\n`,
     "utf8"
   );
+
+  let app = await readFile(join(dist, "app.js"), "utf8");
+  app = app.replaceAll("作品集总结/AUDI-E作品/谷雨海报.png", "assets/audi-season-rain.webp");
+  await writeFile(join(dist, "app.js"), app, "utf8");
 }
 
 await rm(dist, { recursive: true, force: true });

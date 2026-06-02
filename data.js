@@ -1,6 +1,7 @@
 const asset = (path) => path.split("/").map(encodeURIComponent).join("/");
 
 const portfolioData = {
+  heroCover: asset("作品集总结/AUDI-E作品/15.png"),
   profile: {
     name: "刘奕辰 Mark",
     title: "AIGC 创意设计师 / AI 视觉内容项目经理",
@@ -20,17 +21,19 @@ const portfolioData = {
       title: "Earth Day / 电动未来自然叙事",
       type: "AIGC 海报美图 / TVC 视频",
       cover: asset("作品集总结/AUDI-E作品/地球日美图 (1).jpg"),
-      wideCover: asset("作品集总结/AUDI-E作品/微博封面竖版1.jpg"),
+      wideCover: asset("作品集总结/AUDI-E作品/地球日美图 (1).jpg"),
       summary:
         "围绕先锋、豪华与电动科技气质，将车型置于富有生命力的未来自然景观之中，以光影、尺度与空气感建立品牌视觉记忆。",
       role: "项目经理 / AIGC 创意设计",
       services: ["视觉方向", "提示词系统", "批量生成", "筛选精修", "TVC 关键视觉"],
       media: [
-        { type: "image", src: asset("作品集总结/AUDI-E作品/地球日美图 (1).jpg"), alt: "AUDI-E 地球日汽车视觉海报" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/地球日美图 (2).jpg"), alt: "AUDI-E 电动汽车自然场景视觉" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/地球日美图 (3).jpg"), alt: "AUDI-E 地球日系列画面" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/地球日美图 (4).jpg"), alt: "AUDI-E 汽车与自然视觉" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/地球日美图 (5).jpg"), alt: "AUDI-E 地球日收束画面" },
+        { type: "image", orientation: "wide", src: asset("作品集总结/AUDI-E作品/15.png"), alt: "AUDI-E 15 车型视觉主画面" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/地球日美图 (1).jpg"), alt: "AUDI-E 地球日汽车视觉海报" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/地球日美图 (2).jpg"), alt: "AUDI-E 电动汽车自然场景视觉" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/地球日美图 (3).jpg"), alt: "AUDI-E 地球日系列画面" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/地球日美图 (4).jpg"), alt: "AUDI-E 汽车与自然视觉" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/地球日美图 (5).jpg"), alt: "AUDI-E 地球日收束画面" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/AUDI原力节.png"), alt: "AUDI-E 原力节视觉海报" },
         {
           type: "video",
           src: asset("作品集总结/AUDI-E作品/0422奥迪世界日-1.0.m4v"),
@@ -46,16 +49,23 @@ const portfolioData = {
       title: "Seasons / 节气情绪视觉",
       type: "社媒视觉 / 动态内容",
       cover: asset("作品集总结/AUDI-E作品/谷雨海报.png"),
-      wideCover: asset("作品集总结/AUDI-E作品/B站&小红书横版封面1.jpg"),
+      wideCover: asset("作品集总结/AUDI-E作品/画板 3.png"),
       summary:
         "以谷雨、立夏、大雪与春日后视镜为内容线索，把季节情绪与车型设计语言融合，形成适配多平台传播的系列画面。",
       role: "AIGC 创意设计 / 视频制作支持",
       services: ["节气创意", "海报视觉", "社媒尺寸适配", "动态内容"],
       media: [
-        { type: "image", src: asset("作品集总结/AUDI-E作品/谷雨海报.png"), alt: "AUDI-E 谷雨海报" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/立夏3-4.png"), alt: "AUDI-E 立夏汽车视觉" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/大雪-1080x1440.png"), alt: "AUDI-E 大雪汽车视觉" },
-        { type: "image", src: asset("作品集总结/AUDI-E作品/1080x1440.png"), alt: "AUDI-E 季节视觉作品" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/1.png"), alt: "AUDI-E 系列视觉作品 1" },
+        { type: "image", orientation: "wide", src: asset("作品集总结/AUDI-E作品/2.png"), alt: "AUDI-E 系列视觉作品 2" },
+        { type: "image", orientation: "wide", src: asset("作品集总结/AUDI-E作品/3.png"), alt: "AUDI-E 系列视觉作品 3" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/4.png"), alt: "AUDI-E 系列视觉作品 4" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/谷雨海报.png"), alt: "AUDI-E 谷雨海报" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/立夏3-4.png"), alt: "AUDI-E 立夏汽车视觉" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/大雪-1080x1440.png"), alt: "AUDI-E 大雪汽车视觉" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/12.png"), alt: "AUDI-E 系列视觉作品 12" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/13.png"), alt: "AUDI-E 系列视觉作品 13" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/1080x1440.png"), alt: "AUDI-E 季节视觉作品" },
+        { type: "image", orientation: "portrait", src: asset("作品集总结/AUDI-E作品/小红书竖版&抖音封面1.png"), alt: "AUDI-E 社媒竖版封面视觉" },
         {
           type: "video",
           src: asset("作品集总结/AUDI-E作品/分享后视镜里的春天_13.m4v"),
@@ -65,7 +75,7 @@ const portfolioData = {
         {
           type: "video",
           src: asset("作品集总结/AUDI-E作品/0402奥迪出行-12.m4v"),
-          poster: asset("作品集总结/AUDI-E作品/视频号封面1.jpg"),
+          poster: asset("作品集总结/AUDI-E作品/小红书竖版&抖音封面1.jpg"),
           alt: "AUDI-E 出行短片"
         }
       ]
@@ -123,6 +133,12 @@ const portfolioData = {
           src: asset("作品集总结/吉利作品/轮播.mp4"),
           poster: asset("作品集总结/吉利作品/轮播封面.jpg"),
           alt: "汽车视觉轮播动态内容"
+        },
+        {
+          type: "video",
+          src: asset("作品集总结/吉利作品/吉利中国星&蓝猫官宣视频(3).m4v"),
+          poster: asset("作品集总结/吉利作品/吉利帝豪中国星 (1).png"),
+          alt: "吉利中国星与蓝猫官宣视频"
         }
       ]
     }

@@ -1,4 +1,5 @@
 const portfolioData = {
+  "heroCover": "assets/audi-15-hero.webp",
   "profile": {
     "name": "刘奕辰 Mark",
     "title": "AIGC 创意设计师 / AI 视觉内容项目经理",
@@ -17,7 +18,7 @@ const portfolioData = {
       "title": "Earth Day / 电动未来自然叙事",
       "type": "AIGC 海报美图 / TVC 视频",
       "cover": "assets/audi-earth-01.webp",
-      "wideCover": "assets/audi-earth-wide.webp",
+      "wideCover": "assets/audi-earth-01.webp",
       "summary": "围绕先锋、豪华与电动科技气质，将车型置于富有生命力的未来自然景观之中，以光影、尺度与空气感建立品牌视觉记忆。",
       "role": "项目经理 / AIGC 创意设计",
       "services": [
@@ -30,28 +31,45 @@ const portfolioData = {
       "media": [
         {
           "type": "image",
+          "orientation": "wide",
+          "src": "assets/audi-15-hero.webp",
+          "alt": "AUDI-E 15 车型视觉主画面"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-earth-01.webp",
           "alt": "AUDI-E 地球日汽车视觉海报"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-earth-02.webp",
           "alt": "AUDI-E 电动汽车自然场景视觉"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-earth-03.webp",
           "alt": "AUDI-E 地球日系列画面"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-earth-04.webp",
           "alt": "AUDI-E 汽车与自然视觉"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-earth-05.webp",
           "alt": "AUDI-E 地球日收束画面"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-force-festival.webp",
+          "alt": "AUDI-E 原力节视觉海报"
         }
       ]
     },
@@ -74,23 +92,69 @@ const portfolioData = {
       "media": [
         {
           "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-series-01.webp",
+          "alt": "AUDI-E 系列视觉作品 1"
+        },
+        {
+          "type": "image",
+          "orientation": "wide",
+          "src": "assets/audi-series-02.webp",
+          "alt": "AUDI-E 系列视觉作品 2"
+        },
+        {
+          "type": "image",
+          "orientation": "wide",
+          "src": "assets/audi-series-03.webp",
+          "alt": "AUDI-E 系列视觉作品 3"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-series-04.webp",
+          "alt": "AUDI-E 系列视觉作品 4"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-season-rain.webp",
           "alt": "AUDI-E 谷雨海报"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-season-summer.webp",
           "alt": "AUDI-E 立夏汽车视觉"
         },
         {
           "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-season-snow.webp",
           "alt": "AUDI-E 大雪汽车视觉"
         },
         {
           "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-series-12.webp",
+          "alt": "AUDI-E 系列视觉作品 12"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-series-13.webp",
+          "alt": "AUDI-E 系列视觉作品 13"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
           "src": "assets/audi-season-alt.webp",
           "alt": "AUDI-E 季节视觉作品"
+        },
+        {
+          "type": "image",
+          "orientation": "portrait",
+          "src": "assets/audi-xhs-cover.webp",
+          "alt": "AUDI-E 社媒竖版封面视觉"
         }
       ]
     },
@@ -181,6 +245,12 @@ const portfolioData = {
           "type": "image",
           "src": "assets/geely-lynk.webp",
           "alt": "汽车商业社媒视觉作品"
+        },
+        {
+          "type": "video",
+          "src": "assets/geely-china-star-blue-cat.mp4",
+          "poster": "assets/geely-star-01.webp",
+          "alt": "吉利中国星与蓝猫官宣视频"
         }
       ]
     }

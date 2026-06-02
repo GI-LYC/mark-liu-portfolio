@@ -11,19 +11,28 @@
   <body data-page="home">
     <div data-site-header></div>
     <main>
-      <section class="hero">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow blue">AIGC VISUAL DESIGNER / AUTOMOTIVE</p>
-          <h1>塑造未来<br>驾驭视觉<span class="blue-dot">.</span></h1>
+      <section class="hero product-hero" aria-label="首页首屏介绍">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="pop-dot dot-a" aria-hidden="true"></div>
+        <div class="pop-dot dot-b" aria-hidden="true"></div>
+        <div class="pop-dot dot-c" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <p class="eyebrow blue">AIGC VISUAL ENGINE / AUTOMOTIVE</p>
+          <h1 class="glitch-title" data-text="视觉为速度而生">
+            视觉为速度而生<span class="blue-dot">.</span>
+          </h1>
           <p class="hero-description">
-            刘奕辰 Mark，以生成式视觉、电影级光影与动态叙事，为汽车品牌创造具有传播力的未来场景。
+            刘奕辰 Mark，将汽车卖点、电影级光影与生成式工作流融合，创造具有未来感与传播力的品牌视觉。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="portfolio.html">浏览作品</a>
-            <a class="button ghost" href="contact.html">合作联系</a>
+            <a class="button primary" href="portfolio.html">进入作品集</a>
+            <a class="button ghost" href="about.html">了解 Mark</a>
           </div>
         </div>
-        <a class="hero-visual" data-featured-project href="project.html?id=audi-earth-day" data-reveal>
+
+        <a class="hero-visual" data-featured-project href="project.html?id=audi-earth-day">
+          <span class="device-glow" aria-hidden="true"></span>
           <img data-hero-image src="" alt="AUDI-E 代表视觉作品">
           <div class="visual-caption">
             <div>
@@ -33,7 +42,13 @@
             <span class="round-arrow">↗</span>
           </div>
         </a>
-        <div class="scroll-note">SCROLL TO EXPLORE</div>
+
+        <div class="hero-specs" aria-label="核心能力">
+          <span>AI KEY VISUAL</span>
+          <span>TVC FRAME</span>
+          <span>LoRA WORKFLOW</span>
+        </div>
+        <div class="scroll-note">SCROLL</div>
       </section>
 
       <section class="statement" data-reveal>

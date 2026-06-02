@@ -77,7 +77,7 @@ function setupShell() {
 }
 
 function renderHome() {
-  document.querySelector("[data-hero-image]").src = projects[0].wideCover;
+  document.querySelector("[data-hero-image]").src = window.PORTFOLIO_DATA.heroCover || projects[0].wideCover;
   document.querySelector("[data-featured-project]").href = projectLink(projects[0]);
   document.querySelector("[data-home-projects]").innerHTML = projects
     .slice(0, 3)
@@ -103,9 +103,10 @@ function renderPortfolio() {
 }
 
 function mediaMarkup(media) {
+  const orientationClass = media.orientation ? ` media-${media.orientation}` : "";
   if (media.type === "video") {
     return `
-      <figure class="detail-media media-video">
+      <figure class="detail-media media-video${orientationClass}">
         <video controls preload="metadata" poster="${media.poster}" playsinline aria-label="${media.alt}">
           <source src="${media.src}" type="video/mp4">
         </video>
@@ -113,7 +114,7 @@ function mediaMarkup(media) {
       </figure>`;
   }
   return `
-    <figure class="detail-media">
+    <figure class="detail-media${orientationClass}">
       <button class="zoom-image" type="button" data-lightbox-src="${media.src}" data-lightbox-alt="${media.alt}">
         <img src="${media.src}" alt="${media.alt}" loading="lazy">
       </button>
@@ -140,6 +141,17 @@ function setupLightbox() {
   });
 }
 
+function setupGalleryCarousel() {
+  const track = document.querySelector("[data-gallery-track]");
+  if (!track) return;
+  document.querySelectorAll("[data-gallery-scroll]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = button.dataset.galleryScroll === "next" ? 1 : -1;
+      track.scrollBy({ left: direction * track.clientWidth * 0.86, behavior: "smooth" });
+    });
+  });
+}
+
 function renderProject() {
   const selectedId = new URLSearchParams(window.location.search).get("id");
   const project = projects.find((item) => item.id === selectedId) || projects[0];
@@ -155,7 +167,29 @@ function renderProject() {
   document.querySelector("[data-project-services]").innerHTML = project.services
     .map((service) => `<li>${service}</li>`)
     .join("");
-  document.querySelector("[data-project-media]").innerHTML = project.media.map(mediaMarkup).join("");
+  const mediaContainer = document.querySelector("[data-project-media]");
+  const useCarousel = project.id === "audi-seasons";
+  mediaContainer.classList.toggle("gallery-carousel", useCarousel);
+  if (useCarousel) {
+    const images = project.media.filter((media) => media.type !== "video");
+    const videos = project.media.filter((media) => media.type === "video");
+    mediaContainer.innerHTML = `
+      <div class="gallery-carousel-head">
+        <p class="eyebrow">VISUAL SCROLL</p>
+        <div class="gallery-controls" aria-label="滑动浏览控制">
+          <button type="button" data-gallery-scroll="prev" aria-label="向左浏览">←</button>
+          <button type="button" data-gallery-scroll="next" aria-label="向右浏览">→</button>
+        </div>
+      </div>
+      <div class="gallery-track" data-gallery-track>
+        ${images.map(mediaMarkup).join("")}
+      </div>
+      <div class="gallery-video-list">
+        ${videos.map(mediaMarkup).join("")}
+      </div>`;
+  } else {
+    mediaContainer.innerHTML = project.media.map(mediaMarkup).join("");
+  }
 
   const currentIndex = projects.indexOf(project);
   const next = projects[(currentIndex + 1) % projects.length];
@@ -163,6 +197,7 @@ function renderProject() {
   nextLink.href = projectLink(next);
   nextLink.querySelector("strong").textContent = next.title;
   nextLink.querySelector("span").textContent = next.brand;
+  setupGalleryCarousel();
   setupLightbox();
 }
 
