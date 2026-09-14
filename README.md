@@ -2,6 +2,27 @@
 
 汽车视觉设计作品集网站。首页是暖白背景的滚动式竖版作品叠页，其余页面保留现有设计。内容取自当前目录中的个人简历、作品图片与视频素材。
 
+## 线上访问与换设备
+
+- 正式网站：https://gi-lyc.netlify.app 。由 Netlify 托管，不依赖开发电脑开机或本地服务器运行。
+- GitHub 仓库：https://github.com/GI-LYC/mark-liu-portfolio 。`main` 已关联 Netlify，发布目录为 `dist/`。
+- `127.0.0.1:4173` 仅是当前设备的本地预览地址，不是可对外分享的网址。
+- 原始素材的 Git LFS 上传完成后才算完成远程备份；上传期间关机、休眠或断网会中断传输。
+
+新设备安装 Git、Git LFS 与 Node.js 22 或更新版本，然后执行：
+
+```sh
+git lfs install
+git clone https://github.com/GI-LYC/mark-liu-portfolio.git
+cd mark-liu-portfolio
+git lfs pull
+npm ci
+node scripts/validate-media.mjs --published
+npm run dev
+```
+
+打开 `http://127.0.0.1:4173/dist/index.html` 即可预览已构建版本，无需本机原来的绝对路径、Python 或 FFmpeg。重新生成图片和视频才需要安装下述构建依赖。修改网站后需更新 `dist/` 并提交推送，线上网站才会获得新版本。
+
 ## 本地运行
 
 需要 Node.js 22 或更新版本。
