@@ -1,0 +1,72 @@
+{
+  "audi-world-cup": {
+    "width": 960,
+    "height": 540,
+    "accent": "#353a3e",
+    "thumb": "media/archive-audi-world-cup-thumb.webp",
+    "cover": "media/archive-audi-world-cup-cover.webp"
+  },
+  "geely-ai-story": {
+    "width": 960,
+    "height": 540,
+    "accent": "#353633",
+    "thumb": "media/archive-geely-ai-story-thumb.webp",
+    "cover": "media/archive-geely-ai-story-cover.webp"
+  },
+  "wuling-reborn": {
+    "width": 960,
+    "height": 1706,
+    "accent": "#464951",
+    "thumb": "media/archive-wuling-reborn-thumb.webp",
+    "cover": "media/archive-wuling-reborn-cover.webp"
+  },
+  "audi-earth-day": {
+    "width": 3356,
+    "height": 1888,
+    "accent": "#4d443a",
+    "thumb": "media/archive-audi-earth-day-thumb.webp",
+    "cover": "media/archive-audi-earth-day-cover.webp"
+  },
+  "audi-seasons": {
+    "width": 1080,
+    "height": 1920,
+    "accent": "#787c70",
+    "thumb": "media/archive-audi-seasons-thumb.webp",
+    "cover": "media/archive-audi-seasons-cover.webp"
+  },
+  "geely-transformation": {
+    "width": 1080,
+    "height": 1920,
+    "accent": "#999fad",
+    "thumb": "media/archive-geely-transformation-thumb.webp",
+    "cover": "media/archive-geely-transformation-cover.webp"
+  },
+  "geely-china-star": {
+    "width": 2000,
+    "height": 4330,
+    "accent": "#3d3b3e",
+    "thumb": "media/archive-geely-china-star-thumb.webp",
+    "cover": "media/archive-geely-china-star-cover.webp"
+  },
+  "wuling-palace": {
+    "width": 1080,
+    "height": 1920,
+    "accent": "#5d677c",
+    "thumb": "media/archive-wuling-palace-thumb.webp",
+    "cover": "media/archive-wuling-palace-cover.webp"
+  },
+  "geely-calendar": {
+    "width": 960,
+    "height": 2076,
+    "accent": "#91a88d",
+    "thumb": "media/archive-geely-calendar-thumb.webp",
+    "cover": "media/archive-geely-calendar-cover.webp"
+  },
+  "geely-sales": {
+    "width": 960,
+    "height": 1706,
+    "accent": "#5d85a4",
+    "thumb": "media/archive-geely-sales-thumb.webp",
+    "cover": "media/archive-geely-sales-cover.webp"
+  }
+}
