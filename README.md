@@ -23,6 +23,8 @@ Hero 使用本地 GSAP / ScrollTrigger / Flip，不依赖在线 CDN。滚动逐�
 
 ## 构建发布包
 
+原始作品位于 `作品集总结/`，使用 Git LFS 保存，发布网站仍使用 `dist/`。克隆仓库后运行 `git lfs install` 和 `git lfs pull` 获取完整原图与原视频。简历原件、工具缓存和本地测试截图不纳入仓库。
+
 使用 Node.js 22 或更新版本、带 Pillow 的 Python，以及本地 FFmpeg：
 
 ```powershell
